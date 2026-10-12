@@ -3,6 +3,10 @@
   "version": "1.0.0",
   "description": "JavaScript/TypeScript client for the Reputify API (api.reputify.io): reviews, scores, surveys, invitations, embeds, OAuth and webhook verification.",
   "license": "MIT",
+  "author": {
+    "name": "SERVIT Software Solutions",
+    "url": "https://servit.dev"
+  },
   "homepage": "https://api.reputify.io/",
   "repository": {
     "type": "git",
