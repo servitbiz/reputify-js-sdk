@@ -1,0 +1,30 @@
+{
+  "name": "@reputify/sdk",
+  "version": "1.0.0",
+  "description": "JavaScript/TypeScript client for the Reputify API (api.reputify.io): reviews, scores, surveys, invitations, embeds, OAuth and webhook verification.",
+  "license": "MIT",
+  "homepage": "https://api.reputify.io/",
+  "keywords": ["reputify", "reviews", "reputation", "trustscore", "api", "sdk"],
+  "type": "module",
+  "main": "./dist/cjs/index.js",
+  "module": "./dist/esm/index.js",
+  "types": "./dist/esm/index.d.ts",
+  "exports": {
+    ".": {
+      "import": { "types": "./dist/esm/index.d.ts", "default": "./dist/esm/index.js" },
+      "require": { "types": "./dist/cjs/index.d.ts", "default": "./dist/cjs/index.js" }
+    }
+  },
+  "files": ["dist", "README.md"],
+  "sideEffects": false,
+  "engines": { "node": ">=18" },
+  "scripts": {
+    "build": "rm -rf dist && tsc -p tsconfig.json && tsc -p tsconfig.cjs.json && echo '{\"type\":\"commonjs\"}' > dist/cjs/package.json",
+    "test": "npm run build && node --test test/*.test.mjs",
+    "prepublishOnly": "npm test"
+  },
+  "devDependencies": {
+    "typescript": "^5.6.3",
+    "@types/node": "^20.16.0"
+  }
+}
